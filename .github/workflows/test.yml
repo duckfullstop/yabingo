@@ -15,8 +15,6 @@ jobs:
       id: go
     - name: Check out code into the Go module directory
       uses: actions/checkout@v2
-    - name: Install dependencies
-      run: go get .
     - name: Run Tests
       run: go test -json ./... > TestResults-${{ matrix.platform }}-${{ matrix.go-version }}.json
     - name: Upload Go test results
